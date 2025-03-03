@@ -1,4 +1,4 @@
 version: 1.2
 workflows:
-  - subclass: wdl 
+  - subclass: WDL 
     primaryDescriptorPath: leafcutter_bam_to_junc_parallel.wdl

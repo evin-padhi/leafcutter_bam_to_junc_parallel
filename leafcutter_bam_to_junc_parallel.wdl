@@ -14,7 +14,7 @@ task leafcutter_bam_to_junc {
     
     String out_file = "${sample_id}.regtools_junc.txt.gz"
     
-    command <<<!
+    command <<<
         set -euo pipefail
         echo $(date +"[%b %d %H:%M:%S] Extracting junctions for sample ~{sample_id}")
         
@@ -26,7 +26,7 @@ task leafcutter_bam_to_junc {
         regtools junctions extract -a 8 -m 50 -M 500000 -s ~{strand_specificity} "${filtered_bam}" | gzip -c > "~{out_file}"
         
         echo $(date +"[%b %d %H:%M:%S] Done")
-    !>>>
+    >>>
     
     runtime {
         docker: "gcr.io/broad-cga-francois-gtex/leafcutter:latest"

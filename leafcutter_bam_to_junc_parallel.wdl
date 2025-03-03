@@ -30,7 +30,7 @@ task leafcutter_bam_to_junc {
     
     runtime {
         docker: "gcr.io/broad-cga-francois-gtex/leafcutter:latest"
-        memory: "~{memory}GB"
+        memory: "~{memory} GB"
         disks: "local-disk ~{disk_space} HDD"
         cpu: num_threads
         preemptible: num_preempt
